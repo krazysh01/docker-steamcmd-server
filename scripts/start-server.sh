@@ -65,4 +65,4 @@ echo "---Server ready---"
 
 echo "---Start Server---"
 cd ${SERVER_DIR}
-${SERVER_DIR}/PalServer.sh -port ${GAME_PORT} -useperfthreads -NoAsyncLoadingThread -UseMultithreadForDS -players ${MAX_PLAYERS}
+${SERVER_DIR}/PalServer.sh -port ${GAME_PORT} -players ${MAX_PLAYERS} ${GAME_PARAMS}

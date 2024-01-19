@@ -65,4 +65,4 @@ echo "---Server ready---"
 
 echo "---Start Server---"
 cd ${SERVER_DIR}
-${SERVER_DIR}/srcds_run -game ${GAME_NAME} ${GAME_PARAMS} -console +port ${GAME_PORT}
+${SERVER_DIR}/PalServer.sh -port ${GAME_PORT} -useperfthreads -NoAsyncLoadingThread -UseMultithreadForDS -players ${MAX_PLAYERS}

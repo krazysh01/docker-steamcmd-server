@@ -6,12 +6,10 @@ This Docker will download and install SteamCMD and the according game that is pu
 ## Example Env params for Palworld
 | Name | Value | Example |
 | --- | --- | --- |
-| STEAMCMD_DIR | Folder for SteamCMD | /serverdata/steamcmd |
-| SERVER_DIR | Folder for gamefile | /serverdata/serverfiles |
 | SERVERDATA_DIR | Folder for all serverdata | /serverdata |
 | GAME_ID | The GAME_ID that the container downloads at startup. If you want to install a static or beta version of the game change the value to: '232330 -beta YOURBRANCH' (without quotes, replace YOURBRANCH with the branch or version you want to install). | 2394010 |
 | GAME_NAME | SRCDS gamename | palworld |
-| GAME_PARAMS | Values to start the server | -secure +maxplayers 32 +map de_dust2 |
+| MAX_PLAYERS| Server player limit | 16 |
 | UID | User Identifier | 99 |
 | GID | Group Identifier | 100 |
 | GAME_PORT | Port the server will be running on | 8211 |
@@ -26,11 +24,8 @@ docker run --name CSSource -d \
 	--env 'GAME_ID=2394010 ' \
 	--env 'GAME_NAME=palworld' \
 	--env 'GAME_PORT=8211' \
-	--env 'GAME_PARAMS=-secure +maxplayers 32 +map de_dust2' \
 	--env 'UID=99' \
 	--env 'GID=100' \
-	--volume /path/to/steamcmd:/serverdata/steamcmd \
-	--volume /path/to/palworld:/serverdata/serverfiles \
 	--volume /path/to/serverdata:/serverdata \
 	ghcr.io/krazysh01/palworldserver:latest
 ```
